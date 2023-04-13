@@ -1,0 +1,10 @@
+$sidebar-width: 200px;
+$sidebar-collapse-width: 64px;
+$sidebar-expand-icon-animation-duration: .3s;
+$sidebar-logo-animation-duration: 0.05s;
+$sidebar-animation-fun: ease-out;
+
+:export {
+    sidebarWidth: $sidebar-width;
+    sidebarCollapseWidth: $sidebar-collapse-width;
+}
