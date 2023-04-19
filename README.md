@@ -1,18 +1,37 @@
-# Vue 3 + TypeScript + Vite
+# LyMenu
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### props
 
-## Recommended IDE Setup
+```js
+menus：{
+    id: string | number;
+    path: string;
+    text: string;
+    icon?: string; // 可以是路径，也可以是base64位编码
+    type?: "group" | "";
+    children?: MenuItem[]
+}[]
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+其他属性同 element-plus 的 el-menu 组件属性相同，直接传入即可
 
-## Type Support For `.vue` Imports in TS
+# LyForm
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### props
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```js
+vModel: {
+  [k: string | symbol | number]: string | number | boolean;
+} //form表单数据
+formItems: {
+  attrs: {
+    label?: string;
+    prop: string;
+    [k: string]: unknown;
+  }; // el-form-item 的属性
+  component: {
+    componentIs: string | Component;  // 组件名，比如el-input，或者直接是个组件
+    attrs?: { [k: string]: unknown; }; // 组件的属性，比如el-input的属性size...
+  };
+}[] // 表单项配置，根据此对象决定表单类型
+```

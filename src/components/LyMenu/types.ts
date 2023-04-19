@@ -3,7 +3,7 @@ export interface MenuItem {
     path: string;
     text: string;
     icon?: string;
-    type?: string;
+    type?: "group" | "";
     children?: MenuItem[]
 }
 
