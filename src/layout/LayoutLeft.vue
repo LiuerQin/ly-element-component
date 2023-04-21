@@ -1,6 +1,6 @@
 <template>
   <div class="layout-left" :style="menuWrapperStyle">
-    <ly-menu :menus="menus" :collapse="!isExpand" default-active="/2" :collapse-transition="false" />
+    <ly-menu :menus="menus" :collapse="!isExpand" :default-active="$route.path" :collapse-transition="false" />
   </div>
 </template>
 <script lang="ts" setup>
@@ -47,6 +47,11 @@ const menus: MenuList = [{
   id: 11,
   path: "/form",
   text: "表单",
+  icon: MenuIcon
+}, {
+  id: 12,
+  path: "/table",
+  text: "表格",
   icon: MenuIcon
 }] 
 </script>

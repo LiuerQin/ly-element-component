@@ -22,7 +22,7 @@ menus：{
 ```js
 vModel: {
   [k: string | symbol | number]: string | number | boolean;
-} //form表单数据
+} //form表单数据，使用v-model绑定的值
 formItems: {
   attrs: {
     label?: string;

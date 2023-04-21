@@ -10,11 +10,13 @@
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "sourceType": "module",
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "ecmaFeatures": { "jsx": true }
   },
   "rules": {
     // override/add rules settings here, such as:
     "vue/no-unused-vars": "error",
-    "vue/first-attribute-linebreak": 0
+    "vue/first-attribute-linebreak": 0,
+    "@typescript-eslint/no-non-null-assertion": 0
   }
 }

@@ -8,8 +8,8 @@ export type Attrs = {
 
 export type LyFormItem = {
   attrs: Attrs & { label?: string; prop: string };
-  component: {
-    componentIs: string | Component;
+  component?: {
+    render: string | Component;
     attrs?: Attrs;
   };
 };
