@@ -8,12 +8,13 @@
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
  */
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import router from "./router"
-import {setupStore} from "./store"
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import locale from 'element-plus/lib/locale/lang/zh-cn'
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from "./router"
+import { setupStore } from "./store"
+import './style.css'
 
-createApp(App).use(ElementPlus).use(router).use(setupStore).mount('#app')
+createApp(App).use(ElementPlus,{locale}).use(router).use(setupStore).mount('#app')

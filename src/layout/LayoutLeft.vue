@@ -4,12 +4,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { computed } from "vue"
+import scssVariable from "@/styles/layout-variable.module.scss"
+import MenuIcon from "assets/imgs/menu-icon.png"
 import LyMenu from "components/LyMenu/LyMenu.vue"
 import { MenuList } from "components/LyMenu/types"
 import { useLayoutStore } from "store/modules/layout"
-import scssVariable from "@/styles/layout-variable.module.scss"
-import MenuIcon from "assets/imgs/menu-icon.png"
+import { computed } from "vue"
 
 const layoutStore = useLayoutStore()
 const isExpand = computed(() => layoutStore.isExpand)
@@ -48,6 +48,15 @@ const menus: MenuList = [{
   path: "/form",
   text: "表单",
   icon: MenuIcon
+},
+{
+  id: 12,
+  path: "/pagination",
+  text: "分页"
+},{
+  id: 13,
+  path: "/select",
+  text: "下拉框"
 }] 
 </script>
 
